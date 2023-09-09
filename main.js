@@ -18,7 +18,7 @@ function convertLink() {
         const today = (new Date().getUTCDay() + 6) % 7; 
 
         // Define the expected keys based on UTC day
-        const expectedKeys = ['byte5', 'codez', 'pixel', 'wifi5', 'vrfun', 'led21', 'javax'];
+        const expectedKeys = ['pixel', 'logic', 'codec', 'cloud', 'crash', 'debug', 'stack'];
         const currentDomain = window.location.origin;
 
         if (linkKey === expectedKeys[today]) {
@@ -77,13 +77,13 @@ function copyToClipboard() {
 function openshrtlink() {
     // Define the mapping of keys to URLs
     const keyToURL = {
-        'byte5': 'https://Byte5.com',
-        'codez': 'https://Codez.com',
-        'pixel': 'https://Pixel.com',
-        'wifi5': 'https://Wifi5.com',
-        'vrfun': 'https://VRFun.com',
-        'led21': 'https://google.com',
-        'javax': 'https://javaX.com'
+        'pixel': 'https://Byte5.com',
+        'logic': 'https://Codez.com',
+        'codec': 'https://Pixel.com',
+        'cloud': 'https://Wifi5.com',
+        'crash': 'https://VRFun.com',
+        'debug': 'https://google.com',
+        'stack': 'https://javaX.com'
     };
 
     // Check if the currentCorrectKey is in the mapping
