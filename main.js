@@ -1,5 +1,5 @@
 // Declare currentCorrectKey as a global variable
-const currentCorrectKey = ['byte5', 'codez', 'pixel', 'wifi5', 'vrfun', 'led21', 'javax'][(new Date().getUTCDay() + 6) % 7];
+const currentCorrectKey = ['pixel', 'logic', 'codec', 'cloud', 'crash', 'debug', 'stack'][(new Date().getUTCDay() + 6) % 7];
 
 function convertLink() {
     const linkInput = document.getElementById('link-input').value;
