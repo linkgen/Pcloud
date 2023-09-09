@@ -22,7 +22,7 @@ function convertLink() {
         const currentDomain = window.location.origin;
 
         if (linkKey === expectedKeys[today]) {
-            const convertedLink = `${currentDomain}?id=${encodedCode}`; // Replace 'example.com' with your domain
+            const convertedLink = `${currentDomain}/Pcloud/?id=${encodedCode}`; // Replace 'example.com' with your domain
             document.getElementById('link-input').style.display = 'none';
             document.getElementById('link-key').style.display = 'none';
             document.getElementById('getKeyButton').style.display = 'none';
