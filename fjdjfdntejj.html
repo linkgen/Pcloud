@@ -78,60 +78,63 @@
     </div>
 
    <script>
-        function copyKeyToClipboard() {
-            var keyElement = document.getElementById("softwareKey");
-            var keyText = keyElement.innerText;
+    function copyKeyToClipboard() {
+        var keyElement = document.getElementById("softwareKey");
+        var keyText = keyElement.innerText;
 
-            var tempInput = document.createElement("input");
-            tempInput.setAttribute("value", keyText);
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
+        var tempInput = document.createElement("input");
+        tempInput.setAttribute("value", keyText);
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
 
-            alert("Key copied to clipboard: " + keyText);
-        }
+        alert("Key copied to clipboard: " + keyText);
+    }
 
-        // Get the referrer URL
-        var referrer = document.referrer;
+    // Get the referrer URL
+    var referrer = document.referrer;
 
-        // Display the referrer as text
-       
+    // Display the referrer as text
 
-        // Define the expected referrer URL
-        var expectedReferrer = "https://shrinkforearn.in/";
+    // Define the expected referrer URL
+    var expectedReferrer = "https://shrinkforearn.in/";
 
-        if (referrer !== expectedReferrer) {
-            var errorMessage = document.getElementById("error-message");
-            errorMessage.innerText = "Access denied. Please visit from the correct source.";
-        } else {
-            // Show the key if the referrer is correct
-            var keyElement = document.getElementById("softwareKey");
-            keyElement.style.display = "block";
-            // Enable the copy button
-            var copyButton = document.getElementById("copyButton");
-            copyButton.removeAttribute("disabled");
-        }
+    if (referrer !== expectedReferrer) {
+        var errorMessage = document.getElementById("error-message");
+        errorMessage.innerText = "Access denied. Please visit from the correct source.";
 
-        // Countdown and redirect after 5 seconds (only if referrer doesn't match)
-        if (referrer !== expectedReferrer) {
-            var countdownElement = document.getElementById("countdown");
-            var seconds = 5;
+        // Hide the copy button
+        var copyButton = document.getElementById("copyButton");
+        copyButton.style.display = "none";
+    } else {
+        // Show the key if the referrer is correct
+        var keyElement = document.getElementById("softwareKey");
+        keyElement.style.display = "block";
+        // Enable the copy button
+        var copyButton = document.getElementById("copyButton");
+        copyButton.style.display = "block";
+    }
 
-            function updateCountdown() {
-                countdownElement.style.display = "block";
-                countdownElement.innerText = "Redirecting in " + seconds + " seconds...";
-                seconds--;
+    // Countdown and redirect after 5 seconds (only if referrer doesn't match)
+    if (referrer !== expectedReferrer) {
+        var countdownElement = document.getElementById("countdown");
+        var seconds = 5;
 
-                if (seconds < 0) {
-                    window.location.href = "https://pclouddirect.github.io/Pcloud/";
-                } else {
-                    setTimeout(updateCountdown, 1000);
-                }
+        function updateCountdown() {
+            countdownElement.style.display = "block";
+            countdownElement.innerText = "Redirecting in " + seconds + " seconds...";
+            seconds--;
+
+            if (seconds < 0) {
+                window.location.href = "https://pclouddirect.github.io/Pcloud/";
+            } else {
+                setTimeout(updateCountdown, 1000);
             }
-
-            updateCountdown();
         }
-    </script>
+
+        updateCountdown();
+    }
+</script>
 </body>
 </html>
