@@ -89,42 +89,41 @@
             alert("Key copied to clipboard: " + keyText);
         }
 
-        // Check the referrer and display the key if necessary
-        var expectedReferrer = "https://09linksjw.blogspot.com/"; // Change to your specific referrer URL
-        var actualReferrer = document.referrer;
-        if (actualReferrer !== expectedReferrer) {
-            var errorMessage = document.getElementById("error-message");
-            errorMessage.innerText = "Access denied. Please visit from the correct source.";
+        <script>
+    // Get the referrer URL
+    var referrer = document.referrer;
+
+    // Display the referrer as text
+    document.getElementById("referrerText").textContent = referrer;
+
+    // Define the expected referrer URL
+    var expectedReferrer = "https://nqnrnwnwr.blogspot.com/";
+
+    if (referrer !== expectedReferrer) {
+        var errorMessage = document.getElementById("error-message");
+        errorMessage.innerText = "Access denied. Please visit from the correct source.";
+    } else {
+        // Show the key if the referrer is correct
+        var keyElement = document.getElementById("softwareKey");
+        keyElement.style.display = "block";
+    }
+
+    // Countdown and redirect after 5 seconds
+    var countdownElement = document.getElementById("countdown");
+    var seconds = 5;
+
+    function updateCountdown() {
+        countdownElement.innerText = "Redirecting in " + seconds + " seconds...";
+        seconds--;
+
+        if (seconds < 0) {
+            window.location.href = "https://www.google.com";
         } else {
-            // Show the key if the referrer is correct
-            var keyElement = document.getElementById("softwareKey");
-            keyElement.style.display = "block";
+            setTimeout(updateCountdown, 1000);
         }
+    }
 
-        // Countdown and redirect after 5 seconds
-        var countdownElement = document.getElementById("countdown");
-        var seconds = 5;
-        
-        function updateCountdown() {
-            countdownElement.innerText = "Redirecting in " + seconds + " seconds...";
-            seconds--;
-
-            if (seconds < 0) {
-                window.location.href = "https://www.google.com";
-            } else {
-                setTimeout(updateCountdown, 1000);
-            }
-        }
-
-        updateCountdown();
-    </script>
-
-    <script>
-        // Get the referrer URL
-        var referrer = document.referrer;
-
-        // Display the referrer as text
-        document.getElementById("referrerText").textContent = referrer;
-    </script>
+    updateCountdown();
+</script>
 </body>
 </html>
