@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pcloud Converter Key</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: #fff;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .software-key {
+            font-size: 28px;
+            background-color: #1e1e1e;
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            user-select: all;
+            display: none;
+        }
+        .copy-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        .countdown {
+            font-size: 20px;
+            margin-top: 20px;
+            display: none; /* Hide the countdown initially */
+        }
+        .referrerText {
+            display: none; /* Hide the countdown initially */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pcloud Converter Software Key</h1>
+        <p>Thank you for choosing Pcloud Converter!</p>
+        
+        <div id="error-message" class="error-message"></div>
+        
+        <p>Your software key is:</p>
+        <div class="software-key" id="softwareKey">Debub</div>
+        <button type="button" class="copy-button" onclick="copyKeyToClipboard()">Copy Key</button>
+        
+        <div class="countdown" id="countdown">Redirecting in 5 seconds...</div>
+    </div>
+
+    <script>
+        function copyKeyToClipboard() {
+            var keyElement = document.getElementById("softwareKey");
+            var keyText = keyElement.innerText;
+
+            var tempInput = document.createElement("input");
+            tempInput.setAttribute("value", keyText);
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            alert("Key copied to clipboard: " + keyText);
+        }
+
+        // Get the referrer URL
+        var referrer = document.referrer;
+
+        // Display the referrer as text
+       
+
+        // Define the expected referrer URL
+        var expectedReferrer = "https://nqnrnwnwr.blogspot.com/";
+
+        if (referrer !== expectedReferrer) {
+            var errorMessage = document.getElementById("error-message");
+            errorMessage.innerText = "Access denied. Please visit from the correct source.";
+        } else {
+            // Show the key if the referrer is correct
+            var keyElement = document.getElementById("softwareKey");
+            keyElement.style.display = "block";
+        }
+
+        // Countdown and redirect after 5 seconds (only if referrer doesn't match)
+        if (referrer !== expectedReferrer) {
+            var countdownElement = document.getElementById("countdown");
+            var seconds = 5;
+
+            function updateCountdown() {
+                countdownElement.style.display = "block";
+                countdownElement.innerText = "Redirecting in " + seconds + " seconds...";
+                seconds--;
+
+                if (seconds < 0) {
+                    window.location.href = "https://www.google.com";
+                } else {
+                    setTimeout(updateCountdown, 1000);
+                }
+            }
+
+            updateCountdown();
+        }
+    </script>
+</body>
+</html>
