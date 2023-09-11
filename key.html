@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pcloud Convertor Key</title>
+    <title>Pcloud Converter Key</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -56,14 +56,15 @@
         .countdown {
             font-size: 20px;
             margin-top: 20px;
+            display: none; /* Hide the countdown initially */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Pcloud Convertor Software Key</h1>
-      <p id="referrerText"></p>
-        <p>Thank you for choosing Pcloud Convertor!</p>
+        <h1>Pcloud Converter Software Key</h1>
+        <p id="referrerText"></p>
+        <p>Thank you for choosing Pcloud Converter!</p>
         
         <div id="error-message" class="error-message"></div>
         
@@ -89,41 +90,43 @@
             alert("Key copied to clipboard: " + keyText);
         }
 
-        <script>
-    // Get the referrer URL
-    var referrer = document.referrer;
+        // Get the referrer URL
+        var referrer = document.referrer;
 
-    // Display the referrer as text
-    document.getElementById("referrerText").textContent = referrer;
+        // Display the referrer as text
+        document.getElementById("referrerText").textContent = referrer;
 
-    // Define the expected referrer URL
-    var expectedReferrer = "https://nqnrnwnwr.blogspot.com/";
+        // Define the expected referrer URL
+        var expectedReferrer = "https://nqnrnwnwr.blogspot.com/";
 
-    if (referrer !== expectedReferrer) {
-        var errorMessage = document.getElementById("error-message");
-        errorMessage.innerText = "Access denied. Please visit from the correct source.";
-    } else {
-        // Show the key if the referrer is correct
-        var keyElement = document.getElementById("softwareKey");
-        keyElement.style.display = "block";
-    }
-
-    // Countdown and redirect after 5 seconds
-    var countdownElement = document.getElementById("countdown");
-    var seconds = 5;
-
-    function updateCountdown() {
-        countdownElement.innerText = "Redirecting in " + seconds + " seconds...";
-        seconds--;
-
-        if (seconds < 0) {
-            window.location.href = "https://www.google.com";
+        if (referrer !== expectedReferrer) {
+            var errorMessage = document.getElementById("error-message");
+            errorMessage.innerText = "Access denied. Please visit from the correct source.";
         } else {
-            setTimeout(updateCountdown, 1000);
+            // Show the key if the referrer is correct
+            var keyElement = document.getElementById("softwareKey");
+            keyElement.style.display = "block";
         }
-    }
 
-    updateCountdown();
-</script>
+        // Countdown and redirect after 5 seconds (only if referrer doesn't match)
+        if (referrer !== expectedReferrer) {
+            var countdownElement = document.getElementById("countdown");
+            var seconds = 5;
+
+            function updateCountdown() {
+                countdownElement.style.display = "block";
+                countdownElement.innerText = "Redirecting in " + seconds + " seconds...";
+                seconds--;
+
+                if (seconds < 0) {
+                    window.location.href = "https://www.google.com";
+                } else {
+                    setTimeout(updateCountdown, 1000);
+                }
+            }
+
+            updateCountdown();
+        }
+    </script>
 </body>
 </html>
