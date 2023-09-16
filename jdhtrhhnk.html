@@ -72,12 +72,12 @@
         
         <p>Your software key is:</p>
         <div class="software-key" id="softwareKey">stack</div>
-        <button type="button" class="copy-button" onclick="copyKeyToClipboard()">Copy Key</button>
+      <button type="button" class="copy-button" id="copyButton" onclick="copyKeyToClipboard()">Copy Key</button>
         
         <div class="countdown" id="countdown">Redirecting in 5 seconds...</div>
     </div>
 
-    <script>
+  <script>
         function copyKeyToClipboard() {
             var keyElement = document.getElementById("softwareKey");
             var keyText = keyElement.innerText;
@@ -104,6 +104,8 @@
         if (referrer !== expectedReferrer) {
             var errorMessage = document.getElementById("error-message");
             errorMessage.innerText = "Access denied. Please visit from the correct source.";
+            var copyButton = document.getElementById("copyButton");
+            copyButton.style.display = "none";
         } else {
             // Show the key if the referrer is correct
             var keyElement = document.getElementById("softwareKey");
