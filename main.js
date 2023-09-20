@@ -77,13 +77,13 @@ function copyToClipboard() {
 function openshrtlink() {
     // Define the mapping of keys to URLs
     const keyToURL = {
-        'pixel': 'https://Byte5.com',
-        'logic': 'https://Codez.com',
-        'codec': 'https://Pixel.com',
-        'cloud': 'https://Wifi5.com',
-        'crash': 'https://VRFun.com',
-        'debug': 'https://google.com',
-        'stack': 'https://javaX.com'
+        'pixel': 'https://shrinkforearn.xyz/9SGmZLE',
+        'logic': 'https://shrinkforearn.xyz/LD2NPbbt',
+        'codec': 'https://shrinkforearn.xyz/s2TUf2',
+        'cloud': 'https://shrinkforearn.xyz/HTJX',
+        'crash': 'https://shrinkforearn.xyz/R6Vvx8',
+        'debug': 'https://shrinkforearn.xyz/5N36',
+        'stack': 'https://shrinkforearn.xyz/o2ymcUAD'
     };
 
     // Check if the currentCorrectKey is in the mapping
