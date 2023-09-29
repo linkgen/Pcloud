@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GET Request Example</title>
+</head>
+<body>
+  <button onclick="makeRequest()">Make GET Request</button>
+  <div id="response"></div>
+
+  <script>
+    function makeRequest() {
+      const url = 'https://www.dropbox.com/scl/fi/rrslwjtw8fuyjn6ukkn3h/IMG_3390.jpeg?rlkey=2gceavuteeeeet4ecppgdcajl&dl=1';  // Replace with your desired URL
+
+      fetch(url, { method: 'GET', redirect: 'follow' })
+        .then(response => {
+          // Display status code and headers
+          const status = `Status: ${response.status} ${response.statusText}`;
+          const headers = response.headers.entries();
+          let headersText = 'Headers:\n';
+          for (const [name, value] of headers) {
+            headersText += `${name}: ${value}\n`;
+          }
+
+          // Display response body
+          return response.text().then(body => {
+            const responseBody = `Response Body:\n${body}`;
+            document.getElementById('response').innerText = `${status}\n${headersText}\n${responseBody}`;
+          });
+        })
+        .catch(error => console.error('Error:', error));
+    }
+  </script>
+</body>
+</html>
